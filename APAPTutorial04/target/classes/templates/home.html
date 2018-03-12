@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Login</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+
+        <title>View All Students</title>
+    </head>
+
+    <body>
+    
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SI Kemahasiswaan</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Tambah Mahasiswa</a></li>
+      <li><a href="#">Kelulusan Mahasiswa</a></li>
+      <li><a href="#">Cari Mahasiswa</a></li>
+    </ul>
+  </div>
+</nav>
+  
+        <h2>Sistem Informasi Kemahasiswaan</h2>
+        <h4>Selamat Datang di Sistem Informasi Kemahasiswaan</h4>
+    	
+    	<div>
+    	<h3>Lihat Data Mahasiswa Berdasarkan NPM</h3>
+    	<h4>Masukan nomor npm mahasiswa</h4>
+    	</div>
+    	<form action="/student/view" method="get">
+    	<div class="form-group">
+  			<label for="usr">Npm:</label>
+ 		    <input type="text" class="form-control" id="npm" name="npm"></input>
+ 		 <div>
+			<button type="submit" name="action" value="cari">Cari</button>
+		</div>
+</div>
+    	</form>
+    </body>
+</html>

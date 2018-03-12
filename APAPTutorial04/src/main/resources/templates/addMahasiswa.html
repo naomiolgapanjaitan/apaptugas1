@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Login</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<base href="/" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+<title>View All Students</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">SI Kemahasiswaan</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Tambah Mahasiswa</a></li>
+				<li><a href="#">Kelulusan Mahasiswa</a></li>
+				<li><a href="#">Cari Mahasiswa</a></li>
+			</ul>
+		</div>
+	</nav>
+	<form class="form-horizontal" action='' method="POST">
+		<fieldset>
+			<div id="legend">
+				<legend class="">Tambah Mahasiswa</legend>
+			</div>
+			<div class="control-group">
+				<!-- Username -->
+				<label class="control-label" for="namalengkap">Nama Lengkap</label>
+				<div class="controls">
+					<input type="text" id="namalengkap" name="namalengkap"
+						placeholder="" class="input-xlarge"></input>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<!-- E-mail -->
+				<label class="control-label" for="tempatlahir">Tempat Lahir</label>
+				<div class="controls">
+					<input type="text" id="tempatlahir" name="tempatlahir"
+						placeholder="" class="input-xlarge"></input>
+					<p class="help-block">Please provide your E-mail</p>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<label class="control-label" for="tanggallahir">Tanggal
+						lahir</label> <input class="form-control" id="date" name="date"
+						placeholder="MM/DD/YYY" type="text" />
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Jenis
+					Kelamin</label>
+				<div class="controls">
+					<div class="form-group">
+						<select class="form-control" id="sel1">
+							<option>Pilih</option>
+							<option>Perempuan</option>
+							<option>Laki - Laki</option>
+
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Agama</label>
+				<div class="controls">
+					<div class="form-group">
+						<select class="form-control" id="sel1">
+							<option>Pilih</option>
+							<option>Islam</option>
+							<option>Kristen</option>
+							<option>Khatolik</option>
+							<option>Hindu</option>
+							<option>Budha</option>
+
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Golongan
+					Darah</label>
+				<div class="controls">
+					<div class="form-group">
+						<select class="form-control" id="sel1">
+							<option>A-</option>
+							<option>A+</option>
+							<option>B-</option>
+							<option>B+</option>
+							<option>AB</option>
+							<option>0</option>
+
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Username -->
+				<label class="control-label" for="namalengkap">Tahun Masuk</label>
+				<div class="controls">
+					<input type="text" id="namalengkap" name="namalengkap"
+						placeholder="" class="input-xlarge"></input>
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Jalur
+					Masuk</label>
+				<div class="controls">
+					<div class="form-group">
+						<select class="form-control" id="sel1">
+							<option>Pilih</option>
+							<option>Undangan Olimpiade</option>
+							<option>Undangan Reguler/SBMPTN</option>
+							<option>Undangan Paralel/PPKB</option>
+							<option>Ujian Tulis Bersama /SBMPTN</option>
+							<option>Ujian Tulis Mandiri</option>
+
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Jalur
+					Masuk</label>
+				<div class="controls">
+					<div class="form-group">
+						<select class="form-control" id="sel1">
+						<option th:each="prodi : ${listprodi}" th:value="${prodi.id}" th:text="${prodi.kode_prodi}+' : '+${prodi.nama_prodi}"></option>
+						
+						</select>
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<div class="control-group">
+				<!-- Button -->
+				<div class="controls">
+					<button class="btn btn-success">Register</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</body>
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+</html>
