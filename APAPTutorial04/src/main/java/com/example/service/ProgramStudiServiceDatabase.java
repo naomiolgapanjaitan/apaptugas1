@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class ProgramStudiServiceDatabase implements ProgramStudiService
 {
+	private static List<ProgramStudiModel> prodiList = new ArrayList<ProgramStudiModel>();
+
     @Autowired
     private ProgramStudiMapper programstudiMapper;
 
@@ -26,7 +29,11 @@ public class ProgramStudiServiceDatabase implements ProgramStudiService
         log.info ("select prostud with id {}", id);  
         return programstudiMapper.selectProgramStudi (id);
     }
-
-
+    @Override
+	public List<ProgramStudiModel> selectAllProdi(){
+		
+		return programstudiMapper.selectAllProdi();
+	}
+    
 
 }

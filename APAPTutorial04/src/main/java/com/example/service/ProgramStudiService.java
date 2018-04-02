@@ -10,4 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 public interface ProgramStudiService
 {
 	ProgramStudiModel selectProgramStudi (int id);
+	List <ProgramStudiModel> selectAllProdi();
+	
 }

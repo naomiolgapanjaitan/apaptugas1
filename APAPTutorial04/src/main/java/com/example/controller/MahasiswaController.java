@@ -51,8 +51,11 @@ public class MahasiswaController
 
 
     @RequestMapping("/mahasiswa/tambah")
-    public String add ()
+    public String add (Model model)
     {
+    	 List<ProgramStudiModel> prodis = prodi.selectAllProdi();;
+    	model.addAttribute ("prodis", prodis);
+
         return "form-add";
     }
 
@@ -114,13 +117,7 @@ public class MahasiswaController
         log.info ("mahasiswa nama {}", mahasiswa.getNama());
 //        
         if (mahasiswa != null) {
-        	 /*log.info ("masuk sini {}", mahasiswa.getNama());
-        	a.setNama(mahasiswa.getNama());
-            a.setNama_prodi(prodi.selectProgramStudi(mahasiswa.getId_prodi()).getNama_prodi());
-            model.addAttribute ("a", a);*/
-//        	model.addAttribute ("mahasiswa", mahasiswa);
-//            return "view";
-			return "view";
+       		return "view";
         } else {
             model.addAttribute ("npm", npm);
             return "not-found";
