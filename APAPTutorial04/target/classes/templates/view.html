@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>View Student by NPM</title>
-    </head>
-    <body>
-       	<h3 th:text="'NPM = ' + ${student.npm}">Student NPM</h3>
-       	<h3 th:text="'Name = ' + ${student.name}">Student Name</h3>
-       	<h3 th:text="'GPA = ' + ${student.gpa}">Student GPA</h3>
-    </body>
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<base href="/" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+
+
+<div th:replace="fragments/header :: header"></div>
+</head>
+<body>
+	<h3 th:text="'Lihat Data Mahasiswa  - ' + ${a.npm}">Student NPM</h3>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">NPM</label>
+		<div class="col-sm-10">
+			<p th:text=" ${a.npm}">NPM</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">Nama</label>
+		<div class="col-sm-10">
+			<p th:text=" ${a.nama}">nama</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">Tempat ,
+			Tanggal Lahir </label>
+		<div class="col-sm-10">
+			<p th:text="${a.tempat_lahir}+','+${a.tanggal_lahir}">TTL</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">Program Studi</label>
+		<div class="col-sm-10">
+			<p th:text=" ${a.nama_prodi}">TTL</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">Fakultas</label>
+		<div class="col-sm-10">
+			<p th:text=" ${a.nama_fakultas}">TTL</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PS">Universitas</label>
+		<div class="col-sm-10">
+			<p th:text=" ${a.nama_universitas}">TTL</p>
+		</div>
+	</div>
+
+</body>
 </html>
 

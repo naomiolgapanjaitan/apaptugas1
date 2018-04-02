@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UniversitasModel
 {
+	private int id;
 	private String kode_univ;
 	private String nama_univ;
+  
 
 }

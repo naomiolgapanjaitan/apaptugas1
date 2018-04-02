@@ -2,6 +2,8 @@ package com.example.model;
 
 import java.util.Date;
 
+import com.example.service.ProgramStudiService;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,27 +11,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentModel
+public class MahasiswaModel
 {
-	 
-   
-    private String nama_lengkap;
+	private int id;
+	private Long npm;
+	private String nama;
+	private String nama_lengkap;
     private String tempat_lahir;
     private Date tanggal_lahir;
     private String jenis_kelamin;
     private String agama;
-    private String gol_darah;
+    private String golongan_darah;
     private String tahun_masuk;
+    private String status;
+    private String jalur_masuk;
     private int id_prodi;
+    private String nama_prodi;
    
-    public  class NPMBuilder {
-    	 private String npm;
-        public NPMBuilder npmGenerator(String npm ) {
-            this.npm ="";
-            String thnmasuk= tahun_masuk.substring(2);
-            return this;
-        }
-    }
-    
-    
 }
