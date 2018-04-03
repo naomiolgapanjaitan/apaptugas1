@@ -12,4 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 public interface UniversitasService
 {
 	UniversitasModel selectUniversitas (int id);
+	List <UniversitasModel> selectAllUniv();
+	
 }

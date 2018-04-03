@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DTO {
 	private int id;
-	private Long npm;
+	private String npm;
 	private String nama;
 	private String nama_lengkap;
     private String tempat_lahir;
-    private Date tanggal_lahir;
+    private String tanggal_lahir;
     private String jenis_kelamin;
     private String agama;
     private String golongan_darah;

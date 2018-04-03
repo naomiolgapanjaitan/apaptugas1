@@ -29,6 +29,7 @@ public class ProgramStudiServiceDatabase implements ProgramStudiService
         log.info ("select prostud with id {}", id);  
         return programstudiMapper.selectProgramStudi (id);
     }
+    
     @Override
 	public List<ProgramStudiModel> selectAllProdi(){
 		

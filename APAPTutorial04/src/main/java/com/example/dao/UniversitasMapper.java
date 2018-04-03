@@ -18,5 +18,7 @@ public interface UniversitasMapper
     @Select("select id, kode_univ , nama_univ   from universitas where id = #{id}")
    UniversitasModel selectUniversitas(@Param("id") int id);
 
- 
+    @Select("select id, kode_univ , nama_univ   from universitas ")
+    List<UniversitasModel>selectAllUniv();
+
 }

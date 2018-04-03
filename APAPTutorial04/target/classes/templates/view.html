@@ -21,6 +21,9 @@
 </head>
 <body>
 	<h3 th:text="'Lihat Data Mahasiswa  - ' + ${a.npm}">Student NPM</h3>
+	<a th:href="'/mahasiswa/ubah/'+${a.npm}"> <button type="button" class="btn btn-warning" name="action" value="ubah">Ubah Data</button>
+	</a>
+	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="PS">NPM</label>
 		<div class="col-sm-10">

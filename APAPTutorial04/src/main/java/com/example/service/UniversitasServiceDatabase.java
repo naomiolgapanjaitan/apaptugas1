@@ -30,7 +30,11 @@ public class UniversitasServiceDatabase implements UniversitasService
        
         return universitasMapper.selectUniversitas(id);
     }
-
+    @Override
+  	public List<UniversitasModel> selectAllUniv(){
+  		
+  		return universitasMapper.selectAllUniv();
+  	}
 
 
 }

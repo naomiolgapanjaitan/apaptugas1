@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<base href="/" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<div th:replace="fragments/header :: header"></div>
+</head>
+    <body>
+  	<br />
+	<div class="container">
+		<h3>Presentase Kelulusan</h3>
+		<br />
+	</div>
+	<div class="container" th:hidden="${closeForm}">
+		<form action="/kelulusan" method="get">
+			<div class="form-group col-5">
+				<label>Tahun</label> <input type="text" class="form-control" name="thn" /> <br /> 
+				<label>Id Program Studi</label> <input type="text" class="form-control" name="prodi" /> <br />
+				<button class="btn btn-primary" type="submit" role="button">Lihat</button>
+			</div>
+		</form>
+	</div>
+	<div class="container" th:hidden="${closeOutput}">
+		<div class="row">
+			<div class="col-7">
+				<div class="row">
+					<div class="col-4"><p><strong>Program Studi</strong></p></div>
+					<div class="col-8"><p th:text="${prodi.nama_prodi}">Bla.............</p></div>
+					<div class="col-4"><p><strong>Fakultas</strong></p></div>
+					<div class="col-8"><p th:text="${fakultas.nama_fakultas}">Bla.............</p></div>
+					<div class="col-4"><p><strong>Universitas</strong></p></div>
+					<div class="col-8"><p th:text="${universitas.nama_univ}">Bla.............</p></div>
+				</div>
+			</div>
+			<div class="col-5">
+				<h1 th:text="${totalPresentase} + '%'">Persentase</h1>
+				<h5 th:text="${infoPresentase}">Info</h5>
+			</div>
+		</div>
+	</div>
+    </body>
+</html>

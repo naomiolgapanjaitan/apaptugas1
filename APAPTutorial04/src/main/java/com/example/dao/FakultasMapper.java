@@ -15,7 +15,11 @@ import com.example.model.ProgramStudiModel;
 public interface FakultasMapper
 {
     @Select("select id, nama_fakultas , kode_fakultas, id_univ  from fakultas where id = #{id}")
-   FakultasModel selectFakultas (@Param("id") int id);
+    FakultasModel selectFakultas (@Param("id") int id);
+    @Select("select id, nama_fakultas , kode_fakultas, id_univ  from fakultas where id_univ = #{id}")
+    List <FakultasModel> selectAllFakultas (@Param("id_univ") int id_univ);
 
- 
+    @Select("select id, nama_fakultas , kode_fakultas, id_univ  from fakultas ")
+    List <FakultasModel> selectAllData ();
+
 }
